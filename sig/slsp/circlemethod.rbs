@@ -1,0 +1,9 @@
+module SLSP
+  module CircleMethod
+    VERSION: String
+    def self.each: (int n) { ([::Integer, ::Integer]) -> void } -> nil
+                 | (int n) -> ::Enumerator[[::Integer, ::Integer], nil]
+    def self.each_with_fair_break: (int n) { ([::Integer, ::Integer]) -> void } -> nil
+                                 | (int n) -> ::Enumerator[[::Integer, ::Integer], nil]
+  end
+end

@@ -1,5 +1,7 @@
 # SLSP::CircleMethod
 
+[![Ruby](https://github.com/wakairo/slsp-circlemethod/actions/workflows/main.yml/badge.svg)](https://github.com/wakairo/slsp-circlemethod/actions/workflows/main.yml)
+
 SLSP:: CircleMethod provides methods using the circle method for Sports League Scheduling Problems.
 
 ## Installation

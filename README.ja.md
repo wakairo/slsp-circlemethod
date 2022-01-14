@@ -1,5 +1,7 @@
 # SLSP::CircleMethod
 
+[![Ruby](https://github.com/wakairo/slsp-circlemethod/actions/workflows/main.yml/badge.svg)](https://github.com/wakairo/slsp-circlemethod/actions/workflows/main.yml)
+
 SLSP:: CircleMethodは、スポーツスケジューリング問題におけるcircle methodを用いたメソッドを提供します。
 
 ## インストール
@@ -83,11 +85,12 @@ Round 6: a h a h a h a h
 ## 開発
 
 このレポジトリをチェックアウトした後に、まず`bin/setup`を実行して下さい。そして次にテストを走らせるために`rake test`を実行して下さい。
+
 このgemをローカル環境にインストールするには、`bundle exec rake install`を実行して下さい。新たなバージョンをリリースするには、`version.rb`内のバージョン番号を更新してから、`bundle exec rake release`を実行して下さい。このコマンドは、新バージョンに対するgitタグを生成し、このタグとgitコミットをpushし、`.gem`ファイルを[rubygems.org](https://rubygems.org)へpushします。
 
 ## 開発への参加
 
-バグレポートとプルリクエストは以下のGitHubへお寄せ下さい。 
+バグレポートとプルリクエストはGitHubへお寄せ下さい。
 https://github.com/wakairo/slsp-circlemethod
 
 ## ライセンス

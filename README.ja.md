@@ -28,6 +28,8 @@ SLSP::CircleMethod.each()は、Circle methodを利用することで、同時に
 
 コード例:
 ```ruby
+require "slsp/circlemethod"
+
 teams = %w(A B C D  E F G H)
 enum = SLSP::CircleMethod.each_with_fair_break(teams.size)
 enum.each_slice(teams.size/2).each_with_index do |x, i|
@@ -56,6 +58,8 @@ SLSP::CircleMethod.each_with_fair_break()は、さらにブレイクを考慮し
 
 コード例:
 ```ruby
+require "slsp/circlemethod"
+
 teams = %w(A B C D  E F G H)
 puts "Team   : " + teams.join(" ")
 enum = SLSP::CircleMethod.each_with_fair_break(teams.size)

@@ -28,6 +28,8 @@ By using the circle method, SLSP::CircleMethod.each() computes schedules of matc
 
 Example:
 ```ruby
+require "slsp/circlemethod"
+
 teams = %w(A B C D  E F G H)
 enum = SLSP::CircleMethod.each_with_fair_break(teams.size)
 enum.each_slice(teams.size/2).each_with_index do |x, i|
@@ -54,6 +56,8 @@ In the following example, team A, B, D, and F have "hh" (consecutive two home ma
 
 Example:
 ```ruby
+require "slsp/circlemethod"
+
 teams = %w(A B C D  E F G H)
 puts "Team   : " + teams.join(" ")
 enum = SLSP::CircleMethod.each_with_fair_break(teams.size)

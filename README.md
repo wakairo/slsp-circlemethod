@@ -22,6 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
+Only simple usage is shown here. For more details, please see the code documentation in slsp-circlemethod/lib/slsp/circlemethod.rb .
+
 ### each()
 
 By using the circle method, SLSP::CircleMethod.each() computes schedules of matches of n teams considering rounds.
@@ -31,7 +33,7 @@ Example:
 require "slsp/circlemethod"
 
 teams = %w(A B C D  E F G H)
-enum = SLSP::CircleMethod.each_with_fair_break(teams.size)
+enum = SLSP::CircleMethod.each(teams.size)
 enum.each_slice(teams.size/2).each_with_index do |x, i|
     puts "Round #{i}: " + x.map{|p,q| "#{teams[p]} vs #{teams[q]}"}.join(", ")
 end
@@ -39,13 +41,13 @@ end
 
 Output:
 ```
-Round 0: A vs H, G vs B, C vs F, E vs D
-Round 1: B vs H, A vs C, D vs G, F vs E
-Round 2: H vs C, B vs D, E vs A, G vs F
-Round 3: D vs H, C vs E, F vs B, A vs G
-Round 4: H vs E, D vs F, G vs C, B vs A
-Round 5: F vs H, E vs G, A vs D, C vs B
-Round 6: H vs G, F vs A, B vs E, D vs C
+Round 0: A vs H, B vs G, C vs F, D vs E
+Round 1: B vs H, C vs A, D vs G, E vs F
+Round 2: C vs H, D vs B, E vs A, F vs G
+Round 3: D vs H, E vs C, F vs B, G vs A
+Round 4: E vs H, F vs D, G vs C, A vs B
+Round 5: F vs H, G vs E, A vs D, B vs C
+Round 6: G vs H, A vs F, B vs E, C vs D
 ```
 
 
@@ -59,9 +61,13 @@ Example:
 require "slsp/circlemethod"
 
 teams = %w(A B C D  E F G H)
+array = SLSP::CircleMethod.each_with_fair_break(teams.size).to_a
+array.each_slice(teams.size/2).each_with_index do |x, i|
+    puts "Round #{i}: " + x.map{|p,q| "#{teams[p]} vs #{teams[q]}"}.join(", ")
+end
+puts
 puts "Team   : " + teams.join(" ")
-enum = SLSP::CircleMethod.each_with_fair_break(teams.size)
-enum.each_slice(teams.size/2).each_with_index do |round, i|
+array.each_slice(teams.size/2).each_with_index do |round, i|
     a = []
     round.each do |home, away|
         a[home] = "h"
@@ -73,6 +79,14 @@ end
 
 Output:
 ```
+Round 0: A vs H, G vs B, C vs F, E vs D
+Round 1: B vs H, A vs C, D vs G, F vs E
+Round 2: H vs C, B vs D, E vs A, G vs F
+Round 3: D vs H, C vs E, F vs B, A vs G
+Round 4: H vs E, D vs F, G vs C, B vs A
+Round 5: F vs H, E vs G, A vs D, C vs B
+Round 6: H vs G, F vs A, B vs E, D vs C
+
 Team   : A B C D E F G H
 Round 0: h a h a h a h a
 Round 1: h h a h a h a a
